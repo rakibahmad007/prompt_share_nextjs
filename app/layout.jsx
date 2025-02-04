@@ -1,28 +1,30 @@
-import '@styles/globals.css'
-import Nav from '@components/Nav'
-import Provider from '@components/Provider'
+import "@styles/globals.css";
+import Nav from "@components/Nav";
+import Provider from "@components/Provider";
 
 export const metadata = {
-    title : 'PromptShare',
-    description: 'Discover and Share AI Prompts',
-}
+  title: "PromptShare",
+  description: "Discover and Share AI Prompts",
+};
 
-const Rootlayout = ({children}) => {
+const Rootlayout = ({ children }) => {
   return (
     <html lang="en">
-        <body>
-            <div className="main">
-                <div className="gradient"/>
-            </div>
+      <body>
+        <Provider>
+          <div className="main">
+            <div className="gradient" />
+          </div>
 
-            <main className="app">
-                <Nav/>
-                {children} 
-                {/* might cause error due to Capital C */}
-            </main>
-        </body>
+          <main className="app">
+            <Nav />
+            {children}
+            {/* might cause error due to Capital C */}
+          </main>
+        </Provider>
+      </body>
     </html>
-  )
-}
+  );
+};
 
-export default Rootlayout
+export default Rootlayout;
